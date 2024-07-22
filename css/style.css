@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --base-color: #F5C518;
+    --base-bg-color: #121212;
+
+    --error-color: #842029;
+    --error-bg-color:#f8d7da;
+    --error-b-clor:#f5c2c7;
+
+    --success-color:#0f5132;
+    --success-bg-color-:#d1e7dd;
+    --success-b-color:#badbcc;
+}
+
+body{
+    font-family: 'Roboto', 'sans-serif';
+}
+
+textarea{
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#full-size{
+    height: calc(100vh - 85px - 73px - 48px);
+}
+
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 85px;
+}
+
+#img-logo{
+    width: 50px;
+    height: 50px;
+    margin: 0 1em 0 1em;
+}
+
+header > a{
+    color: white;
+}
+
+#h-title-page{
+    font-size: 1.7em;
+    font-weight: bold;
+}
+#h-title-page:hover, #h-login:hover{
+    color: rgb(165, 164, 164);
+    transition: .5s;
+}
+
+#h-inp-t{
+    font-size: .96em;
+    padding: 5px;
+    border-radius: 5px;
+    text-indent: 12px;
+
+    border: none;
+    outline: none;
+
+    width: 50vw;
+    max-width: 600px;
+    height: 30px;
+
+    margin-left: 1em;
+}
+
+#h-search-icon{
+    color: black;
+    transform: translate(-40px,7px);
+}
+
+#h-login{
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+
+/*      FOOTER      */
+footer{
+    background-color: black;
+    color: white;
+
+    padding: 1em;
+}
+
+footer > a{
+    color: white;
+}
+
+.footer-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50vw;
+    margin: auto;
+    padding-bottom: 1em;
+}
+.social-media-icon{
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+.social-media-icon:hover{
+    color: lightgray;
+    background-color: lightgray;
+    box-shadow: 0 0 0 5px gray;
+    border-radius: 50%;
+}
+
+.f-user{
+    text-align: center;
+    margin-top: 10px;
+}
+.f-user > a{
+    color: white;
+}
+.f-user > a:hover{
+    color: rgb(165, 164, 164);
+    transition: .5s;
+}
