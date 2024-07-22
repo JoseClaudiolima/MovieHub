@@ -31,7 +31,42 @@ a {
 }
 
 #full-size{
-    height: calc(100vh - 85px - 73px - 48px);
+    min-height: calc(100vh - 85px - 73px - 48px);
+    background-color: var(--base-bg-color);
+}
+
+.label-theme{
+    padding: 10px 0;
+}
+
+.input-theme{
+    width: 60vw;
+    padding: 13px 0;
+
+    font-size: 1em;
+    text-indent: 20px;
+
+    border: none;
+    outline: none;
+    border-radius: 6px;
+}
+
+.btn-theme{
+    color: black;
+    background-color: var(--base-color);
+
+    font-size: 1em;
+    margin-top: 1em;
+    padding: 15px 0;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+.btn-theme:hover{
+    color: var(--base-color);
+    background-color: black;
+    border: 1px solid var(--base-color);
+    transition: .5s;
 }
 
 header{
@@ -55,7 +90,7 @@ header > a{
 }
 
 #h-title-page{
-    font-size: 1.7em;
+    font-size: 1.8em;
     font-weight: bold;
 }
 #h-title-page:hover, #h-login:hover{
@@ -87,6 +122,40 @@ header > a{
 #h-login{
     margin-left: auto;
     margin-right: 1em;
+}
+
+
+/*      AUTH - LOGIN/REGISTER       */
+#auth-main{
+    width: 70vw;
+    margin: auto;
+
+    color: white;
+}
+
+.login > h2, .register >h2{
+    text-align: center;
+    font-weight: 500;
+    font-size: 2em;
+    padding-top: 2em;
+}
+
+.login > h2::after, .register >h2::after{
+    content: '';
+    width: 200px;
+
+    border-bottom: 2px solid var(--base-color);
+
+    display: block;
+    margin: auto;
+}
+
+.login > form, .register > form{
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+    margin: auto;
 }
 
 

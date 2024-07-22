@@ -30,7 +30,7 @@ require_once("config/conn.php");
             </span>
         </a>
     </form>
-    <a href="<?=$base_url?>login.php" id='h-login'>
+    <a href="<?=$base_url?>auth.php" id='h-login'>
         Entrar / Cadastrar
     </a>
 
