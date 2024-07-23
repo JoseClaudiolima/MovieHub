@@ -1,6 +1,10 @@
 <?php
 require_once('config/url.php');
 require_once("config/conn.php");
+require_once('models/Message.php');
+
+$objMessage = new Message($base_url);
+$alert = $objMessage->getMessage();
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +34,7 @@ require_once("config/conn.php");
             </span>
         </a>
     </form>
-    <a href="<?=$base_url?>auth.php" id='h-login'>
+    <a href="<?=$base_url?>auth.php" id='h-login'>  
         Entrar / Cadastrar
     </a>
 
@@ -39,3 +43,10 @@ require_once("config/conn.php");
 <div id='full-size'>
 
 
+<?php if(!empty($alert['msg'])): ?>
+    <p id='space-top'></p>
+    <div class="message <?=$alert['type']?>">
+        <?=$alert['msg']?>
+    </div>
+<?php endif ?>
+<?php $objMessage->clearMessage(); ?>

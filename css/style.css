@@ -109,7 +109,7 @@ header > a{
 
     width: 50vw;
     max-width: 600px;
-    height: 30px;
+    height: 30px !important; 
 
     margin-left: 1em;
 }
@@ -124,11 +124,34 @@ header > a{
     margin-right: 1em;
 }
 
+#space-top{
+    padding-top: 1.5em;
+    background-color: var(--base-bg-color);
+}
+.message{
+    margin: auto;
+    width: 60vw;
+    text-align: center;
+    padding: 15px;
+
+}
+.success{
+    color: var(--success-color);
+    background-color: var(--success-bg-color-);
+    border: 1px solid var(--success-b-color);
+}
+.error{
+    color: var(--error-color);
+    background-color: var(--error-bg-color);
+    border: 1px solid var(--error-b-clor);
+}
+
 
 /*      AUTH - LOGIN/REGISTER       */
 #auth-main{
     width: 70vw;
     margin: auto;
+    padding-bottom: 3em;
 
     color: white;
 }
