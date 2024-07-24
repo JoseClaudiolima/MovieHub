@@ -101,12 +101,24 @@ class UserDAO implements UserDAOInterface{
 
         if($redirect){
             //redireciona para editprofile
+            $this->message->setMessage('Dados atualizados com sucesso!', 'success', 'edit-profile.php');
         }
     }
 
 
     public function verifyToken($protected = false){
+        if(!empty($_SESSION['token'])){
+            $userData = $this->findByToken($_SESSION['token']);
 
+            if ($userData){
+                return $userData;
+            }
+
+        } else if ($protected){
+            $this->message->setMessage('Autentificação é Obrigatória!', 'error');
+        } else{
+            return false;
+        }
     }
 
 
@@ -159,7 +171,18 @@ class UserDAO implements UserDAOInterface{
 
 
     public function findByToken($token){
+        $stmt = $this->conn->prepare('SELECT * FROM users WHERE token = :token');
+        $stmt->bindParam(':token', $token);
+        $stmt->execute();
 
+        if ($stmt->rowCount() > 0){
+            $userData = $stmt->fetch();
+            $userData = $this->buildUser($userData);
+
+            return $userData; 
+        } else{
+            return false;
+        }
     }
 
 
@@ -169,7 +192,9 @@ class UserDAO implements UserDAOInterface{
 
 
     public function destroyToken(){
+        $_SESSION['token'] = '';
 
+        $this->message->setMessage('LogOut realizado com sucesso!', 'success');
     } 
 
 

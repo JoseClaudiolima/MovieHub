@@ -35,7 +35,7 @@ class User{
     }
 
     public function getFullName(){
-        return $this->getF_name() . ' ' . $this->getL_name();
+        return $this->getName() . ' ' . $this->getLastName();
     }
 
 
@@ -53,7 +53,7 @@ class User{
     public function setPassword($password){
         $this->password = $password;
     }
-    public function generatePassword(){
+    public function generatePassword($password){
         $hash_password =  password_hash($password, PASSWORD_DEFAULT);
         return $hash_password;
     }
@@ -82,9 +82,12 @@ class User{
     public function getImage(){
         return $this->image;
     }
+    public function generateImageName($imageName){
+        $image_name =  bin2hex(random_bytes(60)) . $imageName;
+        return $image_name;
+    }
     public function setImage($image){
-        $image_name =  bin2hex(random_bytes(60)) . $image;
-        $this->image = $image_name;
+        $this->image = $image;
     }
 }
 

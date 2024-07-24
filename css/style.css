@@ -40,7 +40,6 @@ a {
 }
 
 .input-theme{
-    width: 60vw;
     padding: 13px 0;
 
     font-size: 1em;
@@ -98,6 +97,12 @@ header > a{
     transition: .5s;
 }
 
+#header-search{
+    display: flex;
+    width: 60%;
+    max-width: 600px;
+}
+
 #h-inp-t{
     font-size: .96em;
     padding: 5px;
@@ -107,7 +112,7 @@ header > a{
     border: none;
     outline: none;
 
-    width: 50vw;
+    width: 100%;
     max-width: 600px;
     height: 30px !important; 
 
@@ -146,6 +151,28 @@ header > a{
     border: 1px solid var(--error-b-clor);
 }
 
+#h-links{
+    display: flex;
+    flex-direction: row;
+
+    width: 30%;
+    margin-left: auto;
+}
+
+nav > a{
+    color: white;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+.logout{
+    color: #fa6767;
+    margin-right: 2em;
+}
+
+.mobile{
+    display: none;
+}
 
 /*      AUTH - LOGIN/REGISTER       */
 #auth-main{
@@ -177,8 +204,103 @@ header > a{
     display: flex;
     flex-direction: column;
 
-    width: fit-content;
+    width: 70%;
     margin: auto;
+}
+
+
+/*      EDIT-PROFILE        */
+#edit-profile{
+    width: 70vw;
+    margin: auto;
+    padding-top: 2em;
+}
+
+.all-user-info-editProfile{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.user-info-editProfile, .user-info-editProfile > form,
+.user-image-info, #change-password, #change-password >form{
+    color: white;
+}
+
+.user-info-editProfile > h2,
+.change-password > h2{
+    font-size: 2em;
+}
+
+.user-info-editProfile > p,
+.change-password > p{
+    margin: .5em auto 1em auto;
+}
+
+
+.user-info-editProfile,
+.user-info-editProfile > form{
+    display: flex;
+    flex-direction: column;
+
+    width: 30vw;
+    margin-right: 4em;
+}
+
+.user-image-info{
+    display: flex;
+    flex-direction: column;
+}
+
+#change-password{
+    margin: auto;
+    margin-top: 4em;
+    width: fit-content;
+}
+
+#change-password > h2{
+    font-size: 2em;
+}
+#change-password > p{
+    margin: .5em 0 1em 0;
+}
+
+#change-password > form{
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+    padding: 0 0 5em 0;
+    width: 40vw;
+}
+
+#userImage-edit-profile{
+    margin: 0 auto 2em auto;
+    height: 130px;
+    width: 130px;
+
+    background-position: center;
+    background-size: cover;
+
+    border: 6px solid var(--base-color);
+    border-radius: 50%;
+}
+
+#login-email{
+    background-color: #aaa;
+    color: black;
+}
+
+#picture{
+    line-height: 10px;
+    font-size: 1em;
+}
+
+#bio{
+    width: 300px;
+    height: 100px;
+
+    font-size: 1.1em;
 }
 
 
@@ -224,4 +346,29 @@ footer > a{
 .f-user > a:hover{
     color: rgb(165, 164, 164);
     transition: .5s;
+}
+
+
+@media(max-width:1300px) and (min-width:1060px){
+    #h-links{
+        width: 50%;
+    }
+}
+
+@media (max-width: 1060px){
+    .desktop{
+        display: none;
+    }
+
+    .mobile{
+        display: inline-block;
+    }
+
+    #header-search{
+        width: 100%;
+    }
+
+    #h-links{
+        width: 40%;
+    }
 }

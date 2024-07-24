@@ -3,8 +3,22 @@ require_once('config/url.php');
 require_once("config/conn.php");
 require_once('models/Message.php');
 
+require_once('models/User.php');
+require_once('models/Message.php');
+require_once('dao/UserDAO.php');
+
 $objMessage = new Message($base_url);
 $alert = $objMessage->getMessage();
+
+$user = new User();
+$userDao = new UserDAO($base_url, $conn);
+
+$userData = $userDao->verifyToken();
+if ($userData){
+    $userAuth = true;
+} else{
+    $userAuth = false;
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,9 +48,24 @@ $alert = $objMessage->getMessage();
             </span>
         </a>
     </form>
-    <a href="<?=$base_url?>auth.php" id='h-login'>  
-        Entrar / Cadastrar
-    </a>
+    <?php if($userAuth): ?>
+        <nav id="h-links">
+            <a href="<?=$base_url?>newMovie.php" class='desktop'>Adicionar Filme</a>
+            <a href="<?=$base_url?>newMovie.php" class='mobile'><span class="material-symbols-outlined">add</span></a>
+            <a href="<?=$base_url?>dashboard.php" class='desktop'>Dashboard</a>
+            <a href="<?=$base_url?>dashboard.php" class='mobile'><span class="material-symbols-outlined">movie</span></a>
+            
+            <a href="<?=$base_url?>edit-profile.php" class='desktop'>Editar Perfil</a>
+            <a href="<?=$base_url?>edit-profile.php" class='mobile'><span class="material-symbols-outlined">person</span></a>
+            <a href="<?=$base_url?>logout.php" class='desktop logout'>Sair</a>
+            <a href="<?=$base_url?>logout.php" class='mobile logout'><span class="material-symbols-outlined">logout</span></a>
+        </nav>
+
+    <?php else: ?>
+        <a href="<?=$base_url?>auth.php" id='h-login'>  
+            Entrar / Cadastrar
+        </a>
+    <?php endif ?>
 
 </header>
 
