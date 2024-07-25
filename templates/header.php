@@ -1,7 +1,6 @@
 <?php
 require_once('config/url.php');
 require_once("config/conn.php");
-require_once('models/Message.php');
 
 require_once('models/User.php');
 require_once('models/Message.php');
@@ -62,9 +61,12 @@ if ($userData){
         </nav>
 
     <?php else: ?>
-        <a href="<?=$base_url?>auth.php" id='h-login'>  
-            Entrar / Cadastrar
-        </a>
+        <nav id="h-login">
+            <a href="<?=$base_url?>auth.php" id='' class='log-desktop'>
+                Entrar / Cadastrar
+            </a>
+            <a href="<?=$base_url?>auth.php" id='icon-login' class='log-mobile'><span class="material-symbols-outlined">login</span></a>
+        </nav>
     <?php endif ?>
 
 </header>

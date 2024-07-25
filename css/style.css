@@ -174,6 +174,10 @@ nav > a{
     display: none;
 }
 
+.log-mobile{
+    display: none;
+}
+
 /*      AUTH - LOGIN/REGISTER       */
 #auth-main{
     width: 70vw;
@@ -301,6 +305,95 @@ nav > a{
     height: 100px;
 
     font-size: 1.1em;
+    font-family: 'Arial';
+    line-height: 1.4em;
+}
+
+
+/*      NEW MOVIE       */
+#new-movie-form{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3em;
+
+    color: white;
+}
+
+#new-movie-main{
+    color: white;
+
+    width: 50vw;
+    margin: auto;
+    padding-top: 2em;
+}
+
+#new-movie-main > h2,
+#new-movie-main > p{
+    text-align: center;
+}
+
+#title-new-movie{
+    font-size: 2em;
+}
+#title-new-movie:after{
+    content: '';
+
+    display: block;
+    width: 300px;
+    margin: 5px auto .5em auto;
+
+    border-bottom: 2px solid var(--base-color);
+}
+
+#category{
+    text-indent: 0;
+    padding-left: 1em;
+}
+
+#description{
+    font-size: 1.1em;
+    font-family: 'Arial';
+    line-height: 1.3em;
+    height: 100px;
+}
+
+#new-movie-main > p{
+    color: lightgray;
+}
+
+.file{
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+}
+#file-name{
+    margin-left: 1em;
+    color: lightgray;
+    display: none;
+}
+
+#banner{
+    display: none;
+}
+#label-file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #08779a;
+    color: black;
+
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#label-file:hover{
+    background-color: #399dbd;
+    color: black;
+    
+    transition: .5s;
 }
 
 
@@ -371,4 +464,80 @@ footer > a{
     #h-links{
         width: 40%;
     }
+
+    #h-login{
+        width: 50%;
+        text-align: right;
+    }
 }
+
+@media (max-width: 660px){
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: inline-block;
+    }
+
+    .log-desktop{
+        display: none;
+    }
+    .log-mobile{
+        display: inline-block;
+    }
+    #icon-login{
+        color: #0ff70f;
+        transform: translateY(4px);
+    }
+
+    #header-search{
+        width: 100%;
+    }
+
+    #h-links{
+        width: 40%;
+    }
+
+    #h-login{
+        width: 10%;
+        text-align: right;
+    }
+}
+
+@media (max-width: 460px){
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: inline-block;
+    }
+
+    .log-desktop{
+        display: none;
+    }
+    .log-mobile{
+        display: inline-block;
+    }
+    #icon-login{
+        color: #0ff70f;
+        transform: translateY(4px);
+    }
+
+    #h-title-page{
+        display: none;
+    }
+
+    #header-search{
+        width: 100%;
+    }
+
+    #h-links{
+        width: 40%;
+    }
+
+    #h-login{
+        width: 10%;
+        text-align: right;
+    }
+}
+

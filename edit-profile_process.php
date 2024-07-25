@@ -1,7 +1,6 @@
 <?php
 require_once('config/url.php');
 require_once("config/conn.php");
-require_once('models/Message.php');
 
 require_once('models/User.php');
 require_once('models/Message.php');
