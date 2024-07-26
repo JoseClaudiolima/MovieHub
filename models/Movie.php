@@ -44,10 +44,10 @@ class Movie{
 
 
     public function getTrailer(){
-        return $this->traielr;
+        return $this->trailer;
     }
-    public function setTrailer($traielr){
-        $this->traielr = $traielr;
+    public function setTrailer($trailer){
+        $this->trailer = $trailer;
     }
 
 

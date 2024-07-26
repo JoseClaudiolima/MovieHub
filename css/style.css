@@ -351,10 +351,12 @@ nav > a{
 }
 
 #description{
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: 'Arial';
-    line-height: 1.3em;
-    height: 100px;
+    line-height: 1.4em;
+    height: 120px;
+    text-indent: 1em;
+    padding: 10px;
 }
 
 #new-movie-main > p{
@@ -396,6 +398,92 @@ nav > a{
     transition: .5s;
 }
 
+
+/*      DASHBOARD (MOVIE)      */
+#m-dashboard{
+    padding-top: 2em;
+    padding-left: 4em;
+    
+    color: white;
+}
+
+#dashboard-title{
+    font-size: 2em;
+    border-left: 4px solid var(--base-color);
+    padding-left: 15px;
+    margin-bottom: .5em;
+}
+
+.right-dashboard{
+    display: flex;
+    justify-content: end;
+}
+
+#add-movie-dashboard{
+    display: block;
+    width: 125px;
+    text-align: center;
+    margin-right: 3em;
+}
+
+#table-dashboard{
+    margin: 2em 0 0 -2em;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+#table-dashboard > thead > tr{
+    border-bottom: 3px solid white;
+}
+#table-dashboard > thead > tr > th{
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+.dashboard-row{
+    border-bottom: 1px solid gray;
+}
+
+.td-dashboard{
+    padding: 20px;
+}
+
+#num-table{
+    width: 10%;
+}
+#title-table{
+    width: 60%;
+}
+#rating-table{
+    width: 10%;
+}
+#action-table{
+    width: 20%;
+}
+
+.center{
+    text-align: center;
+}
+
+#edit-movie{
+    color: #3ffdff;
+}
+#del-movie{
+    color: #ff5968;
+}
+
+#del-form-dashboard{
+    display: inline-block;
+}
+
+#del-btn-dashboard{
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}
 
 /*      FOOTER      */
 footer{

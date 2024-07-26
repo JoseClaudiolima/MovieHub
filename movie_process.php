@@ -64,7 +64,9 @@ if ($type === 'create' or $type === 'update'){
         if($type === 'create'){
             $movieDao->create($movie);
         } else if ($type === 'update'){
-            //$movieDao->update($movieData);
+            $id = filter_input(INPUT_POST, 'movieId');
+            $movie->setId($id);
+            $movieDao->update($movie);
         }
 
 
@@ -73,6 +75,11 @@ if ($type === 'create' or $type === 'update'){
     }
 
     
+
+} else if($type === 'delete'){
+    $movieId = filter_input(INPUT_POST, 'movieId');
+
+    $movieDao->destroy($movieId);
 
 } else{
     $message->setMessage('Informações Inválidas', 'error');
