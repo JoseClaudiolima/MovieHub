@@ -178,6 +178,90 @@ nav > a{
     display: none;
 }
 
+
+
+/*      INDEX / HOME        */
+main#home{
+    padding-top: 1em;
+    padding-left: 2em;
+    color: white;
+}
+main#home > h1{
+    margin-bottom: .4em;
+}
+main#home > p{
+    margin-bottom: 1em;
+}
+
+.movies-container{
+    padding-bottom: 3em;
+}
+
+.index-movie{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /*Quebra (vai para linha abaixo) ao não caber no container*/
+}
+
+#movie-card{
+    min-width: 150px;
+    max-width: 200px;
+    flex: 1 1 20%;
+    margin: 0 1em 1em 1em;
+    background-color: #2a2a2a;
+}
+#image-card{
+    height: 300px;
+    width: 100%;
+
+    background-position: center;
+    background-size: cover;
+}
+.info-card{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+
+    color: white;
+}
+.info-card > p{
+    margin: 1em auto 1em auto;
+    text-align: center;
+    width: 100%;
+    word-wrap: break-word;
+}
+#rating-icon-card{
+    color: var(--base-color);
+    font-weight: bold;
+    transform: translateY(4px);
+}
+#btn-card{
+    margin: 1.5em auto 0em auto;
+    width: 80%;
+    text-align: center;
+}
+
+.title-info-container{
+    margin-bottom: 1.5em;
+}
+.title-info-container > h1,
+.title-info-container > h2{
+    margin-bottom: 8px;
+}
+
+.h2-category-title{
+    font-size: 2em;
+}
+
+.empty-movies{
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #e27f7f;
+    margin-left: 1.2em;
+}
+
+
+
 /*      AUTH - LOGIN/REGISTER       */
 #auth-main{
     width: 70vw;
@@ -592,7 +676,7 @@ footer > a{
     }
 }
 
-@media (max-width: 460px){
+@media (max-width: 600px){
     .desktop{
         display: none;
     }

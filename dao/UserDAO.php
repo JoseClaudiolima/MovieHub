@@ -62,16 +62,21 @@ class UserDAO implements UserDAOInterface{
         $password = $user->getPassword();
         $token = $user->getToken();
 
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':lastName', $lastName);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':token', $token);
+        $emailAlreadyUsed = $this->findByEmail($email);
 
-        $stmt->execute();
-
-        $this->setTokenToSession($user->getToken());
-
+        if ($emailAlreadyUsed){
+            $this->message->setMessage('Email já cadastrado, tente outro!', 'error', 'back');
+        } else{
+            $stmt->bindParam(':name', $name);
+            $stmt->bindParam(':lastName', $lastName);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $password);
+            $stmt->bindParam(':token', $token);
+    
+            $stmt->execute();
+    
+            $this->setTokenToSession($user->getToken());
+        }
     }
 
 
@@ -194,7 +199,7 @@ class UserDAO implements UserDAOInterface{
     public function destroyToken(){
         $_SESSION['token'] = '';
 
-        $this->message->setMessage('LogOut realizado com sucesso!', 'success');
+        $this->message->setMessage('LOGOUT realizado com sucesso!', 'success');
     } 
 
 
