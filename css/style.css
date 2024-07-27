@@ -68,6 +68,13 @@ a {
     transition: .5s;
 }
 
+.impact{
+    border-left: 4px solid var(--base-color);
+    padding-left: 10px;
+}
+
+
+/*      HEADER      */
 header{
     background-color: black;
     color: white;
@@ -119,9 +126,16 @@ header > a{
     margin-left: 1em;
 }
 
+#header-search button{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+
 #h-search-icon{
     color: black;
-    transform: translate(-40px,7px);
+    transform: translate(-40px, 2px);
 }
 
 #h-login{
@@ -273,7 +287,7 @@ main#home > p{
     text-align: center;
 }
 #h1-movie-details{
-    width: 300px;
+    width: 350px;
     border-bottom: 3px solid var(--base-color);
     padding-top: 2px;
     padding-bottom: 10px;
@@ -820,6 +834,43 @@ main#home > p{
 
     cursor: pointer;
 }
+
+
+/*      SEARCH      */
+#search{
+    padding-top: 2em;
+}
+
+.result{
+    padding-left: 3em;
+    margin-bottom: 3em;
+    color: white;
+}
+.result h2{
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+.result p{
+    margin-left: 1em;
+    font-size: 1.1em;
+}
+
+.movies-search{
+    display: flex;
+    flex-direction: row;
+}
+
+#empty-search{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--base-color);
+}
+#span-result{
+    color: #35ffdf;
+}
+
+
 
 /*      FOOTER      */
 footer{

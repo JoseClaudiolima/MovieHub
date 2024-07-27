@@ -135,7 +135,23 @@ class MovieDAO implements MovieDAOInterface{
 
 
     public function findByTitle($title){
+        $stmt = $this->conn->prepare('SELECT * FROM movies WHERE title LIKE :title');
+        $stmt->bindValue(":title", "%" . $title . "%");
+        $stmt->execute();
 
+        if($stmt->rowCount() > 0){
+            $allMovies = $stmt->fetchAll();
+            $allMoviesBuilded = [];
+
+            foreach ($allMovies as $movie) {
+                $allMoviesBuilded[] = $this->buildMovie($movie);
+            }
+
+            return $allMoviesBuilded;
+
+        } else{
+            return false;
+        }
     }
 
     public function create(Movie $movie){

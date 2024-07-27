@@ -14,7 +14,7 @@ $horrorMovies = $movieDao->getMoviesByCategory('horror');
 
     <div class="movies-container">
         <div class="title-info-container">
-            <h1>Filmes Recentes</h1>
+            <h1 class='impact'>Filmes Recentes</h1>
             <p>Veja os comentários dos últimos filmes adicionados no MovieHub.</p>
         </div>
         
@@ -38,7 +38,7 @@ $horrorMovies = $movieDao->getMoviesByCategory('horror');
 
     <div class="movies-container">
         <div class="title-info-container">
-            <h2 class='h2-category-title'>Comedia</h2>
+            <h2 class='h2-category-title impact'>Comedia</h2>
             <p>Veja os melhores filmes de comedia já adicionados.</p>
         </div>
         <?php if($comedyMovies): ?>
@@ -62,7 +62,7 @@ $horrorMovies = $movieDao->getMoviesByCategory('horror');
 
     <div class="movies-container">
         <div class="title-info-container">
-            <h2 class='h2-category-title'>Terror</h2>
+            <h2 class='h2-category-title impact'>Terror</h2>
             <p>Veja os melhores filmes de terror já adicionados.</p>
         </div>
 
