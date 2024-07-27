@@ -33,7 +33,7 @@ if($userData){
         <h1 id='h1-movie-details'><?=$movieData->getTitle();?></h1>
         <p id='short-info'>Duração: <?=$movieData->getLength();?>
         <span id="category-movie"><?=$movieData->getCategory();?></span>
-        <span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> 10
+        <span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> <?=$reviewDao->getRatings($movieData->getId() );?>
         </p>
     </div>
 
@@ -142,7 +142,7 @@ if($userData){
         <?php endforeach ?>
 
     <?php else: ?>
-        <p>Não há comentários ainda para este filme!</p>
+        <p id='empty-review'>Não há comentários ainda para este filme!</p>
     <?php endif ?>
 </div>
 <?php

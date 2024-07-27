@@ -45,7 +45,7 @@ if ($userData){
     <a href="https://github.com/JoseClaudiolima" target='_blank' id="h-title-page">MovieHub</a>
     <form action="search.php" method="get" id="header-search">
         <input type="hidden" name="#" value='#'>
-        <input type="text" name="movie" id="h-inp-t" placeholder='Buscar filmes...'>
+        <input type="text" name="movie" id="h-inp-t" placeholder='Buscar filmes'>
         <a href="<?=$base_url?>search.php?movie=#">
             <span id ='h-search-icon' class="material-symbols-outlined">
                 manage_search

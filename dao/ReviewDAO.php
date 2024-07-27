@@ -123,7 +123,25 @@ class ReviewDAO implements ReviewDAOInterface{
 
 
     public function getRatings($id){
+        $stmt = $this->conn->prepare('SELECT * FROM review WHERE movie_id = :id');
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
 
+        if($stmt->rowCount() > 0){
+            $allMovies = $stmt->fetchAll();
+            $rating = 0;
+
+            foreach($allMovies as $movie){
+                $rating += $movie['rating'];
+            }
+
+            $rating = $rating  / count($allMovies);
+            $rating = round($rating, 2);
+            return $rating;
+
+        } else{
+            return 'Não Avaliado';
+        }
     }
 
 
