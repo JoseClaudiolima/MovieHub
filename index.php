@@ -2,7 +2,7 @@
 require_once("templates/header.php");
 
 
-$movieDao = new MovieDAO($conn, $base_url);
+$movieDao = new MovieDAO($base_url, $conn);
 $AllMovies = $movieDao->getLatestMovies();
 $comedyMovies = $movieDao->getMoviesByCategory('comedy');
 $horrorMovies = $movieDao->getMoviesByCategory('horror');

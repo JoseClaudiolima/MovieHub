@@ -4,8 +4,12 @@ require_once("config/conn.php");
 
 require_once('models/User.php');
 require_once('models/Message.php');
+require_once('models/Review.php');
+
 require_once('dao/UserDAO.php');
 require_once('dao/MovieDAO.php');
+require_once('dao/ReviewDAO.php');
+
 
 $objMessage = new Message($base_url);
 $alert = $objMessage->getMessage();

@@ -12,22 +12,16 @@ class MovieDAO implements MovieDAOInterface{
         $this->conn = $conn;
     }
 
-    public function getUrl(){
-        return $this->url;
-    }
     public function setUrl($url){
         $this->url = $url;
     }
-
-    public function getMessage(){
-        return $this->message;
-    }
+    
     public function setMessage($url){
         $this->message = new Message($url);
     }
 
 
-    public function __construct($conn, $url){
+    public function __construct($url, $conn){
         $this->setConn($conn);
         $this->setUrl($url);
         $this->setMessage($url);

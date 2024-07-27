@@ -261,6 +261,175 @@ main#home > p{
 }
 
 
+/*      MOVIE-DETAILS - MOVIE.PHP       */
+#all-movie-info{
+    color: white;
+    padding-top: 2em;
+}
+
+.firstly-movie-info{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+#h1-movie-details{
+    width: 300px;
+    border-bottom: 3px solid var(--base-color);
+    padding-top: 2px;
+    padding-bottom: 10px;
+
+    display: block;
+}
+#short-info{
+    padding-top: 5px;
+}
+#category-movie{
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+
+    padding: 0 15px 0 15px;
+}
+#rating-icon-card{
+    transform: translateY(5px);
+}
+
+.visual-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: 2em 0 2em 3em;
+
+}
+#movie-trailer{
+    flex: 1 1 50%;
+    max-width: 650px;
+}
+#movie-banner{
+    width: 250px;
+    height: 350px;
+
+    margin-left: 2em;
+    margin-right: 4em;
+
+    background-position: center;
+    background-size: cover;
+}
+
+.description{
+    width: 75vw;
+    max-width: 850px;
+
+    padding-top: 1em;
+    padding-bottom: 25px;
+    margin: auto;
+}
+.description-bottom{
+    width: 80vw;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 3em;
+
+    border-bottom: 4px solid var(--base-color);
+}
+
+.do-review{
+    background-color: #333;
+    color: white;
+
+    width: 65vw;
+    max-width: 700px;
+    margin: auto;
+    padding: 2em;
+
+    border-radius: 10px;
+}
+.do-review, #review-form{
+    display: flex;
+    flex-direction: column;
+}
+.do-review > h3{
+    font-size: 2em;
+
+    padding-bottom: .3em;
+}
+.do-review > p{
+    margin-bottom: 2em;
+}
+#rating > option{
+    text-align: center;
+}
+#comment{
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    outline: none;
+
+    font-size: 1em;
+    font-family: 'Roboto';
+    text-indent: 10px;
+}
+
+#title-review{
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.user-review-details{
+    border-bottom: 1px solid #b6b6b6;
+    width: 60vw;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+.review-user-firstly-info{
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+#user-image-review{
+    width: 62px;
+    height: 62px;
+    background-position: center;
+    background-size: cover;
+
+    border: 3px solid var(--base-color);
+    border-radius: 50%;
+}
+.review-name-rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1em;
+}
+#review-name{
+    color: var(--base-color);
+    font-size: 1.2em;
+}
+#review-name:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.review-date{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.review-info{
+    color: white;
+}
+#review-comment-title{
+    padding-top: 15px;
+    color: #78c996;
+    margin-bottom: 1em;
+}
+
+
 
 /*      AUTH - LOGIN/REGISTER       */
 #auth-main{
