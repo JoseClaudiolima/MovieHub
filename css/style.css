@@ -194,7 +194,7 @@ nav > a{
 
 
 
-/*      INDEX / HOME        */
+/*      INDEX / HOME  AND MOVIE CARD       */
 main#home{
     padding-top: 1em;
     padding-left: 2em;
@@ -214,7 +214,8 @@ main#home > p{
 .index-movie{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /*Quebra (vai para linha abaixo) ao não caber no container*/
+    flex-wrap: wrap;
+    width: 90vw;
 }
 
 #movie-card{
@@ -239,10 +240,13 @@ main#home > p{
     color: white;
 }
 .info-card > p{
-    margin: 1em auto 1em auto;
+    margin: 1.5em auto 0em auto;
     text-align: center;
     width: 100%;
     word-wrap: break-word;
+}
+.no-rating{
+    color: #e27f7f;
 }
 #rating-icon-card{
     color: var(--base-color);
@@ -287,7 +291,7 @@ main#home > p{
     text-align: center;
 }
 #h1-movie-details{
-    width: 350px;
+    max-width: 350px;
     border-bottom: 3px solid var(--base-color);
     padding-top: 2px;
     padding-bottom: 10px;
@@ -310,19 +314,25 @@ main#home > p{
 .visual-info{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
 
     margin: 2em 0 2em 3em;
 
 }
 #movie-trailer{
-    flex: 1 1 50%;
+    flex: 1 1 55%;
+    width: 100%;
+    min-height: 300px;
     max-width: 650px;
 }
 #movie-banner{
     width: 250px;
+    min-width: 200px;
+    max-width: 250px;
+    flex: 1 1 30%;
+    
     height: 350px;
-
     margin-left: 2em;
     margin-right: 4em;
 
@@ -402,6 +412,7 @@ main#home > p{
 .user-review-details{
     border-bottom: 1px solid #b6b6b6;
     width: 60vw;
+    min-width: 300px;
     max-width: 800px;
     margin: auto;
     margin-top: 1.5em;
@@ -455,6 +466,7 @@ main#home > p{
 /*      AUTH - LOGIN/REGISTER       */
 #auth-main{
     width: 70vw;
+    max-width: 600px;
     margin: auto;
     padding-bottom: 3em;
 
@@ -497,6 +509,7 @@ main#home > p{
 .all-user-info-editProfile{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 
@@ -521,13 +534,18 @@ main#home > p{
     display: flex;
     flex-direction: column;
 
-    width: 30vw;
-    margin-right: 4em;
+    width: 40vw;
+    max-width: 350px;
+    margin: 0 0 0 auto;
+
+    padding-right: 4em;
+    padding-bottom: 1em;
 }
 
 .user-image-info{
     display: flex;
     flex-direction: column;
+    margin: 0 auto 0 0;
 }
 
 #change-password{
@@ -536,9 +554,18 @@ main#home > p{
     width: fit-content;
 }
 
-#change-password > h2{
-    font-size: 2em;
+#public-profile-link{
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--base-color);
 }
+#public-profile-link:hover{
+    color: #fccc8b;
+    transition: .5s;
+}
+
 #change-password > p{
     margin: .5em 0 1em 0;
 }
@@ -547,9 +574,11 @@ main#home > p{
     display: flex;
     flex-direction: column;
 
-    margin: auto;
+    margin: 0 0 0 auto;
     padding: 0 0 5em 0;
+
     width: 40vw;
+    max-width: 350px;
 }
 
 #userImage-edit-profile{
@@ -597,6 +626,7 @@ main#home > p{
     color: white;
 
     width: 50vw;
+    max-width: 500px;
     margin: auto;
     padding-top: 2em;
 }
@@ -777,10 +807,14 @@ main#home > p{
 }
 
 #table-dashboard{
-    margin: 2em 0 0 -2em;
     width: 100%;
-    border-collapse: collapse;
+    max-width: 1000px;
 
+    margin: auto;
+    margin-top: 3em;
+    
+    border-collapse: collapse;
+    padding: 10px;
 }
 
 #table-dashboard > thead > tr{
@@ -858,6 +892,7 @@ main#home > p{
 .movies-search{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #empty-search{
@@ -943,6 +978,46 @@ footer > a{
     #h-login{
         width: 50%;
         text-align: right;
+    }
+}
+
+@media (max-width: 1019px){
+    .desktop{
+        display: none;
+    }
+
+    .mobile{
+        display: inline-block;
+    }
+
+    #header-search{
+        width: 100%;
+    }
+
+    #h-links{
+        width: 40%;
+    }
+
+    #h-login{
+        width: 50%;
+        text-align: right;
+    }
+    
+    /*EDIT PROFILE*/
+    .user-image-info{
+        margin: auto;
+    }
+
+    .user-info-editProfile, .user-info-editProfile > form{
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        max-width: 350px;
+        margin: 0 0 0 auto;
+        margin: auto;
+        padding-right: 4em;
+        padding-left: 1em;
+        padding-bottom: 1em;
     }
 }
 

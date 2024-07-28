@@ -4,7 +4,7 @@ require_once("templates/header.php");
 $userDao = new UserDAO($base_url, $conn);
 $userData = $userDao->verifyToken(true);
 
-$movieDao = new MovieDAO($conn, $base_url);
+$movieDao = new MovieDAO($base_url, $conn);
 $movieData = $movieDao->getMoviesByUserId($userData->getId());
 ?>
 

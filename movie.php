@@ -32,7 +32,7 @@ if($userData){
     <div class="firstly-movie-info">
         <h1 id='h1-movie-details'><?=$movieData->getTitle();?></h1>
         <p id='short-info'>Duração: <?=$movieData->getLength();?>
-        <span id="category-movie"><?=$movieData->getCategory();?></span>
+        <span id="category-movie"><?=ucfirst($movieData->getCategory());?></span>
         <span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> <?=$reviewDao->getRatings($movieData->getId() );?>
         </p>
     </div>

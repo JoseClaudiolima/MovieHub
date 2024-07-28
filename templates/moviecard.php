@@ -6,6 +6,11 @@ if(empty($movie->getImage())){
 
 $reviewDao = new ReviewDAO($base_url, $conn);
 
+if($reviewDao->getRatings($movie->getId() ) === "Não Avaliado"){
+    $ratingMovie = false;
+} else{
+    $ratingMovie = true;
+}
 ?>
 
 <main id='movie-card'>
@@ -13,8 +18,15 @@ $reviewDao = new ReviewDAO($base_url, $conn);
     <div id="image-card" style="background-image: url('<?=$base_url?>img/movies/<?=$movie->getImage()?>')"></div>
 
     <div class="info-card">
-        <p><span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> <?=$reviewDao->getRatings($movie->getId() );?></p>
         <p id='title-card'><?=$movie->getTitle()?></p>
+
+        <?php if($ratingMovie): ?>
+            <p><span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> <?=$reviewDao->getRatings($movie->getId() );?></p>
+
+        <?php else:?>
+            <p class='no-rating'><span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> <?=$reviewDao->getRatings($movie->getId() );?></p>
+        <?php endif ?>
+
         <a href="<?=$base_url?>movie.php?id=<?=$movie->getId()?>" class='btn-theme' id='btn-card'>Conhecer</a>
     </div>
 

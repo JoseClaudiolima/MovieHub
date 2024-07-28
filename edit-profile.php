@@ -15,7 +15,9 @@ if (empty($userData->getImage())){
 
     <div class="all-user-info-editProfile">
         <div class="user-info-editProfile">
-            <h2><?=$userData->getFullName();?></h2>
+            <a href="profile.php?id=<?=$userData->getId()?>" id='public-profile-link'>
+                <h2><?=$userData->getFullName();?></h2>
+            </a>
             <p>Altere seus dados no formulário abaixo: </p>
         
             <form action="<?=$base_url?>edit-profile_process.php" method="post" enctype="multipart/form-data">

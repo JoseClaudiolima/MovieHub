@@ -7,13 +7,21 @@ $movieName = filter_input(INPUT_GET, 'movie');
 $movieDao = new MovieDAO($base_url, $conn);
 $movieData = $movieDao->findByTitle($movieName);
 
+if(!$movieData or count($movieData) == 1){
+    $iniText = 'Foi encontrado ';
+    $finText = ' filme';
+} else{
+    $iniText = 'Foram encontrados ';
+    $finText = ' filmes';
+}
+
 ?>
 
 <main id="search">
 
 <div class="result">
         <h2 class="impact">Você está buscando por: <span id="span-result"><?=$movieName?></span>.</h2>
-        <p>Foram encontrado(s) <?= ($movieData) ? count($movieData) : 0 ?> filmes(s).</p>
+        <p><?=$iniText?><?= ($movieData) ? count($movieData) : 'nenhum' ?><?=$finText?>.</p>
 </div>
 
 <?php if($movieData):?>
