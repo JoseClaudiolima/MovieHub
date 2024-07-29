@@ -178,6 +178,22 @@ class ReviewDAO implements ReviewDAOInterface{
     }
 
 
+    public function verifyUserIdInput(User $userData, $reviewId){
+        $userId = $userData->getId();
+
+        $stmt = $this->conn->prepare('SELECT * FROM review WHERE user_id = :user_id and id = :review_id');
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':review_id', $reviewId);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+
     public function destroy(Review $review){
         $reviewId = $review->getId();
         $movieId = $review->getMovieId();

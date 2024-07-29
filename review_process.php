@@ -42,19 +42,35 @@ if ($type === 'create'){
     $editComment = filter_input(INPUT_POST, 'edit-comment');
     $reviewId = filter_input(INPUT_POST, 'reviewId');
 
-    $review = $reviewDao->findReviewById($reviewId);
-    $review->setRating($editRating);
-    $review->setComment($editComment);
+    $securityTest = $reviewDao->verifyUserIdInput($userData, $reviewId);
 
-    $reviewDao->update($review);
+    if($securityTest){
+        $review = $reviewDao->findReviewById($reviewId);
+        $review->setRating($editRating);
+        $review->setComment($editComment);
+    
+        $reviewDao->update($review);
+    } else{
+        $message->setMessage('Informações "Incompatíveis"', 'error');
+    }
+
+
 
 } else if ($type === 'delete'){
     $reviewId = filter_input(INPUT_POST, 'reviewId');
     $reviewData = $reviewDao->findReviewById($reviewId);
 
-    $reviewDao->destroy($reviewData);
+    $securityTest = $reviewDao->verifyUserIdInput($userData, $reviewId);
+    
+    if($securityTest){
+        $reviewDao->destroy($reviewData);
+    } else{
+        $message->setMessage('Informações "Incompatíveis"', 'error');
+    }
+
 
 } else{
     $message->setMessage('Informações Inválidas!', 'error');
 }
+
 ?>

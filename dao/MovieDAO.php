@@ -179,6 +179,22 @@ class MovieDAO implements MovieDAOInterface{
     }
 
 
+    public function verifyUserIdInput(User $userData, $movieId){
+        $userId = $userData->getId();
+
+        $stmt = $this->conn->prepare('SELECT * FROM movies WHERE user_id = :user_id and id = :movie_id');
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':movie_id', $movieId);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+
     public function update(Movie $movie){
         $id = $movie->getId();
         $title = $movie->getTitle(); 

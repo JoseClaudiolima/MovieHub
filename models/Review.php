@@ -94,6 +94,7 @@ Interface ReviewDAOInterface{
     public function findReviewById($id);
     public function update(Review $reviewUser);
     public function destroy(Review $review);
+    public function verifyUserIdInput(User $userData, $reviewId);
 }
 
 ?>

@@ -2,7 +2,7 @@
 require_once("templates/header.php");
 
 $movie = new Movie();
-$movieDao = new MovieDAO($conn, $base_url);
+$movieDao = new MovieDAO($base_url, $conn);
 
 $user = new User();
 $userDao = new UserDAO($base_url, $conn);

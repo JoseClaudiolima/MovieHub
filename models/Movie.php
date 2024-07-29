@@ -87,6 +87,7 @@ Interface MovieDAOInterface{
     public function findById($id);
     public function findByTitle($title);
     public function create(Movie $movie);
+    public function verifyUserIdInput(User $userData, $movieId);
     public function update(Movie $movie);
     public function destroy($id);
 }

@@ -16,7 +16,7 @@ $userDao = new UserDAO($base_url, $conn);
 $userData = $userDao->verifyToken(true);
 
 $movie = new Movie();
-$movieDao = new MovieDAO($conn, $base_url);
+$movieDao = new MovieDAO($base_url, $conn);
 
 
 if ($type === 'create' or $type === 'update'){
@@ -64,22 +64,29 @@ if ($type === 'create' or $type === 'update'){
         if($type === 'create'){
             $movieDao->create($movie);
         } else if ($type === 'update'){
-            $id = filter_input(INPUT_POST, 'movieId');
-            $movie->setId($id);
-            $movieDao->update($movie);
-        }
+            $movieId = filter_input(INPUT_POST, 'movieId');
+            $securityTest = $movieDao->verifyUserIdInput($userData, $movieId);
 
+            if($securityTest){
+                $movie->setId($movieId);
+                $movieDao->update($movie);
+            }else{
+                $message->setMessage('Informações "Incompatíveis"', 'error');
+            }
+        }
 
     } else{
         $message->setMessage('Preencha todos com campos, apenas banner é opcional!', 'error', 'back');
     }
 
-    
-
 } else if($type === 'delete'){
     $movieId = filter_input(INPUT_POST, 'movieId');
-
-    $movieDao->destroy($movieId);
+    $securityTest = $movieDao->verifyUserIdInput($userData, $reviewId);
+    if($securityTest){
+        $movieDao->destroy($movieId);
+    }else{
+        $message->setMessage('Informações "Incompatíveis"', 'error');
+    }
 
 } else{
     $message->setMessage('Informações Inválidas', 'error');
