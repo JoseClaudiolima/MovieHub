@@ -25,6 +25,12 @@ if($userData){
     $auth = false;
 }
 
+if($reviewDao->getRatings($movieData->getId() ) === "Não Avaliado"){
+    $ratingMovie = false;
+} else{
+    $ratingMovie = true;
+}
+
 ?>
 
 <main id="all-movie-info">
@@ -32,8 +38,17 @@ if($userData){
     <div class="firstly-movie-info">
         <h1 id='h1-movie-details'><?=$movieData->getTitle();?></h1>
         <p id='short-info'>Duração: <?=$movieData->getLength();?>
-        <span id="category-movie"><?=ucfirst($movieData->getCategory());?></span>
-        <span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> <?=$reviewDao->getRatings($movieData->getId() );?>
+            <span id="category-movie"><?=ucfirst($movieData->getCategory());?></span>
+
+            <?php if($ratingMovie): ?>
+            <span class="material-symbols-outlined" id="rating-icon-card">star_rate</span>
+             <?=$reviewDao->getRatings($movieData->getId() );?>
+
+            <?php else: ?>
+            <span class="material-symbols-outlined" id="rating-icon-card">star_rate</span>
+            <span class="no-rating"><?=$reviewDao->getRatings($movieData->getId() );?></span>
+
+            <?php endif ?>
         </p>
     </div>
 

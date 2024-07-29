@@ -364,6 +364,7 @@ main#home > p{
     width: 65vw;
     max-width: 700px;
     margin: auto;
+    margin-bottom: 2em;
     padding: 2em;
 
     border-radius: 10px;
@@ -466,11 +467,23 @@ main#home > p{
 /*      AUTH - LOGIN/REGISTER       */
 #auth-main{
     width: 70vw;
-    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
     margin: auto;
     padding-bottom: 3em;
 
     color: white;
+}
+.login{
+    width: 50%;
+    min-width: 300px;
+    margin: 0 0 0 auto;
+}
+.register{
+    width: 50%;
+    min-width: 300px;
+    margin: 0 auto 0 0;
 }
 
 .login > h2, .register >h2{
@@ -606,6 +619,7 @@ main#home > p{
 #bio{
     width: 300px;
     height: 100px;
+    padding: 15px 15px 15px 0;
 
     font-size: 1.1em;
     font-family: 'Arial';
@@ -1018,6 +1032,50 @@ footer > a{
         padding-right: 4em;
         padding-left: 1em;
         padding-bottom: 1em;
+    }
+}
+
+@media (max-width: 720px){
+    .desktop{
+        display: none;
+    }
+
+    .mobile{
+        display: inline-block;
+    }
+
+    #header-search{
+        width: 100%;
+    }
+
+    #h-links{
+        width: 40%;
+    }
+
+    #h-login{
+        width: 50%;
+        text-align: right;
+    }
+    
+    /*Auth*/
+    #auth-main{
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+
+        max-width: 1000px;
+        margin: auto;
+        padding-bottom: 3em;
+
+        color: white;
+    }
+    .login, .register{
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+    }
+    .login h2, .register h2{
+        padding-bottom: 10px;
     }
 }
 
