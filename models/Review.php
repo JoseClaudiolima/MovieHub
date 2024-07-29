@@ -88,9 +88,12 @@ Interface ReviewDAOInterface{
     public function buildReview($data);
     public function getMoviesReview($id);
     public function create(Review $reviewUser);
-    public function update(Review $reviewUser);
     public function hasAlreadyReviewed($movieId, $userId);
     public function getRatings($id);
+
+    public function findReviewById($id);
+    public function update(Review $reviewUser);
+
 }
 
 ?>

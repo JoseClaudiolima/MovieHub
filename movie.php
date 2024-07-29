@@ -20,7 +20,8 @@ $reviewDao = new ReviewDAO($base_url, $conn);
 
 if($userData){
     $auth = true;
-    $alreadyCommented = $reviewDao->hasAlreadyReviewed($movieId , $userData->getId());
+    $commentedId = $reviewDao->hasAlreadyReviewed($movieId , $userData->getId());
+
 } else{
     $auth = false;
 }
@@ -64,7 +65,7 @@ if($reviewDao->getRatings($movieData->getId() ) === "Não Avaliado"){
 
 </main>
 
-<?php if($auth and !$alreadyCommented): ?>
+<?php if($auth and !$commentedId): ?>
     <div class="do-review">
         <h3>Envia sua avaliação</h3>
         <p>Preencha o formulário com a nota e o comentário sobre o filme</p>
@@ -123,12 +124,11 @@ if($reviewDao->getRatings($movieData->getId() ) === "Não Avaliado"){
                 $reviewUpdateDate = $review->getUpdateDate();
                 $reviewUpdateTime = $review->getUpdateTime();
 
-                if($reviewCreateDate == $reviewUpdateDate and $reviewCreateTime == $reviewUpdateTime){
-                    $reviewUpdateDate = '';
-                    $reviewUpdateTime = '';
+                $reviewId = $review->getId();
+                if ($reviewId === $commentedId){
+                    $theReviewFromUser = true;
                 } else{
-                    $reviewCreateDate = '';
-                    $reviewCreateTime = '';
+                    $theReviewFromUser = false;
                 }
             ?>
 
@@ -143,8 +143,20 @@ if($reviewDao->getRatings($movieData->getId() ) === "Não Avaliado"){
 
                     <div class="review-date">
 
-                        <p>Data: <?php echo !empty($reviewCreateDate) ? $reviewCreateDate : $reviewUpdateDate ?></p>
-                               <p><?php echo !empty($reviewCreateTime) ? '' : 'Editado: ' . $reviewUpdateTime ?></p>
+                        <?php if( $reviewCreateDate == $reviewUpdateDate and $reviewCreateTime == $reviewUpdateTime ):?>
+                            <p>Data: <?=$reviewCreateDate?></p>
+                        <?php else: ?>
+                            <p>Editado: <?=$reviewUpdateDate?></p>
+                        <?php endif ?>
+
+                        <?php if($theReviewFromUser): ?>
+                            <form action="editcomment.php" method="post" id='edit-review'>
+                                <input type="hidden" name="reviewId" value='<?=$review->getId()?>'>
+                                <input type="hidden" name="type" value="edit">
+
+                                <input type="submit" value="Editar">
+                            </form>
+                        <?php endif ?>
                     </div>
                 </div>
 

@@ -92,9 +92,9 @@ class ReviewDAO implements ReviewDAOInterface{
         VALUES (:rating, :comment, :user_id, :movie_id, NOW() )');
 
         $stmt->bindParam(':rating', $rating);
-        $stmt->bindParam('comment', $comment);
-        $stmt->bindParam('user_id', $userId);
-        $stmt->bindParam('movie_id', $movieId);
+        $stmt->bindParam(':comment', $comment);
+        $stmt->bindParam(':user_id', $userId);
+        $stmt->bindParam(':movie_id', $movieId);
 
         $stmt->execute();
 
@@ -104,7 +104,37 @@ class ReviewDAO implements ReviewDAOInterface{
 
 
     public function update(Review $reviewUser){
+        $reviewId = $reviewUser->getId();
+        $rating = $reviewUser->getRating();
+        $comment = $reviewUser->getComment();
 
+        $stmt = $this->conn->prepare('UPDATE review SET rating = :rating, comment = :comment WHERE id = :id');
+
+        $stmt->bindParam(':rating', $rating);
+        $stmt->bindParam(':comment', $comment);
+        $stmt->bindParam(':id', $reviewId);
+
+        $stmt->execute();
+
+        $movieId = $reviewUser->getMovieId();
+        $this->message->setMessage('Comentário editado com sucesso!', 'success', "movie.php?id=$movieId");
+    }
+
+
+    public function findReviewById($id){
+        $stmt  = $this->conn->prepare('SELECT * FROM review WHERE id = :id');
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            $reviewData = $stmt->fetch();
+            $reviewBuild = $this->buildReview($reviewData);
+
+            return $reviewBuild;
+            
+        } else{
+            return false;
+        }
     }
 
 
@@ -115,7 +145,10 @@ class ReviewDAO implements ReviewDAOInterface{
         $stmt->execute();
 
         if($stmt->rowCount() > 0){
-            return true;
+            $reviewData = $stmt->fetch();
+            $reviewId = $reviewData['id'];
+            
+            return $reviewId;
         } else{
             return false;
         }
