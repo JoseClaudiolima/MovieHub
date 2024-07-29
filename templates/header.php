@@ -31,6 +31,8 @@ if ($userData){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieHub</title>
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="<?=$base_url?>img/favico.svg" type="image/x-icon">    
     <!--MAIN CSS-->
     <link rel="stylesheet" href="<?=$base_url?>css/style.css">
     <!--GOOGLE ICONS-->

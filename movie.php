@@ -156,6 +156,15 @@ if($reviewDao->getRatings($movieData->getId() ) === "Não Avaliado"){
 
                                 <input type="submit" value="Editar">
                             </form>
+
+                            <form action="review_process.php" method="post">
+                                <input type="hidden" name="type" value='delete'>
+                                <input type="hidden" name="reviewId" value="<?=$review->getId()?>">
+
+                                <button type="submit" id='del-icon' class='del-review'>
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </form>
                         <?php endif ?>
                     </div>
                 </div>

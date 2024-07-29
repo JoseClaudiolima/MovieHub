@@ -43,7 +43,7 @@ $movieData = $movieDao->getMoviesByUserId($userData->getId());
                             <input type="hidden" name="type" value='delete'>
                             <input type="hidden" name="movieId" value='<?=$movie->getId();?>'>
                             <button type="submit" id='del-btn-dashboard'>
-                                <span class="material-symbols-outlined" id='del-movie'>delete</span>
+                                <span class="material-symbols-outlined" id='del-icon'>delete</span>
                             </button>
                         </form>
                     </td>

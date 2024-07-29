@@ -16,7 +16,6 @@ $reviewData = $reviewDao->findReviewById($reviewId);
 if(!$reviewData){
     $message->setMessage('Review de filme não encontrado!', 'error');
 }
-
 ?>
 
 <main id="main-edit-comment">
@@ -26,7 +25,7 @@ if(!$reviewData){
     <h3><?=$userData->getFullName()?></h3>
 
 
-    <form action="edit-review_process.php" method="post" id='form-edit-review'>
+    <form action="review_process.php" method="post" id='form-edit-review'>
         <input type="hidden" name="type" value='update'>
         <input type="hidden" name="reviewId" value="<?=$reviewId?>">
         

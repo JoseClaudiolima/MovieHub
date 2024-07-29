@@ -178,6 +178,16 @@ class ReviewDAO implements ReviewDAOInterface{
     }
 
 
+    public function destroy(Review $review){
+        $reviewId = $review->getId();
+        $movieId = $review->getMovieId();
+
+        $stmt = $this->conn->prepare('DELETE FROM review WHERE id = :id');
+        $stmt->bindParam(':id', $reviewId);
+        $stmt->execute();
+
+        $this->message->setMessage('Review apagada com sucesso!', 'success', "movie.php?id=$movieId");
+    }
 
 }
 

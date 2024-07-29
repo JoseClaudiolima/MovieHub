@@ -93,7 +93,7 @@ Interface ReviewDAOInterface{
 
     public function findReviewById($id);
     public function update(Review $reviewUser);
-
+    public function destroy(Review $review);
 }
 
 ?>

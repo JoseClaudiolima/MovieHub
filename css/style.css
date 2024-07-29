@@ -482,6 +482,10 @@ main#home > p{
     border: 1px solid var(--base-color);
 }
 
+.del-review{
+    transform: translateY(-2px);
+    padding-left: 10px;
+}
 
 
 /*      EDIT REVIEW / COMMENT / EDIT REVIEW PROCESS.php*/
@@ -929,8 +933,14 @@ main#home > p{
 #edit-movie{
     color: #3ffdff;
 }
-#del-movie{
+#del-icon{
     color: #ff5968;
+
+    background-color: transparent;
+    outline: none;
+    border: none;
+
+    cursor: pointer;
 }
 
 #del-form-dashboard{
@@ -1209,5 +1219,8 @@ footer > a{
         width: 10%;
         text-align: right;
     }
-}
 
+    .user-review-details{
+        width: 90vw;
+    }
+}
