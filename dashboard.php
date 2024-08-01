@@ -13,7 +13,7 @@ $movieData = $movieDao->getMoviesByUserId($userData->getId());
     <p>Atualize as informações dos filmes que vc enviou.</p>
     
     <div class="right-dashboard">
-        <a href="<?=$base_url?>newmovie.php" class='btn-theme' id='add-movie-dashboard'>
+        <a href="newmovie.php" class='btn-theme' id='add-movie-dashboard'>
             Adicionar filme
         </a>
     </div>
@@ -36,10 +36,10 @@ $movieData = $movieDao->getMoviesByUserId($userData->getId());
                     <td class='td-dashboard'><?=$movie->getTitle();?></td>
                     <td class='td-dashboard center'>10</td>
                     <td class='td-dashboard center'>
-                        <a href="<?=$base_url?>editmovie.php?id=<?=$movie->getId()?>">
+                        <a href="editmovie.php?id=<?=$movie->getId()?>">
                             <span class="material-symbols-outlined" id='edit-movie'>edit_square</span>
                         </a>
-                        <form action="<?=$base_url?>movie_process.php" method='post' id='del-form-dashboard'>
+                        <form action="movie_process.php" method='post' id='del-form-dashboard'>
                             <input type="hidden" name="type" value='delete'>
                             <input type="hidden" name="movieId" value='<?=$movie->getId();?>'>
                             <button type="submit" id='del-btn-dashboard'>

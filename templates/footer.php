@@ -7,13 +7,13 @@ require_once('config/url.php');
 <footer>
     <div class="footer-icons">
         <a href="#">
-            <img src="<?=$base_url?>img/icons/facebook.png" alt="facebook icon" class='social-media-icon'>
+            <img src="img/icons/facebook.png" alt="facebook icon" class='social-media-icon'>
         </a>
         <a href="#">
-            <img src="<?=$base_url?>img/icons/instagram.png" alt="instagram icon" class='social-media-icon'>
+            <img src="img/icons/instagram.png" alt="instagram icon" class='social-media-icon'>
         </a>
         <a href="#">
-            <img src="<?=$base_url?>img/icons/x.png" alt="x icon" class='social-media-icon'>
+            <img src="img/icons/x.png" alt="x icon" class='social-media-icon'>
         </a>
     </div>
 

@@ -55,7 +55,7 @@ if($reviewDao->getRatings($movieData->getId() ) === "Não Avaliado"){
 
     <div class="visual-info">
         <iframe src="<?=$movieData->getTrailer();?>" frameborder="0" id='movie-trailer'></iframe>
-        <div id="movie-banner" style="background-image: url('<?=$base_url?>img/movies/<?=$movieData->getImage();?>')"></div>
+        <div id="movie-banner" style="background-image: url('img/movies/<?=$movieData->getImage();?>')"></div>
     </div>
 
     <div class="description">
@@ -134,10 +134,10 @@ if($reviewDao->getRatings($movieData->getId() ) === "Não Avaliado"){
 
             <div class="user-review-details">
                 <div class="review-user-firstly-info">
-                    <div id="user-image-review" style="background-image: url('<?=$base_url?>img/users/<?=$userImage?>')"></div>
+                    <div id="user-image-review" style="background-image: url('img/users/<?=$userImage?>')"></div>
 
                     <div class="review-name-rating">
-                        <h4><a href="<?=$base_url?>profile.php?id=<?=$userData->getId()?>" id='review-name'><?=$userName?></a></h4>
+                        <h4><a href="profile.php?id=<?=$userData->getId()?>" id='review-name'><?=$userName?></a></h4>
                         <p id="review-rating"><span class="material-symbols-outlined" id="rating-icon-card">star_rate</span> <?=$userRating?></p>
                     </div>
 

@@ -6,7 +6,7 @@ require_once("templates/header.php");
     <div class="login">
         <h2>Entrar</h2>
     
-        <form action="<?=$base_url?>auth_process.php" method="post">
+        <form action="auth_process.php" method="post">
             <input type="hidden" name="type" value="login">
             <label for="email" class='label-theme'>Email:</label>
             <input type="email" name="email" id="email" class='input-theme' placeholder='Digite seu email' >
@@ -22,7 +22,7 @@ require_once("templates/header.php");
     <div class="register">
         <h2>Criar Conta</h2>
     
-        <form action="<?=$base_url?>auth_process.php" method="post">
+        <form action="auth_process.php" method="post">
             <input type="hidden" name="type" value="register">
             <label for="name" class='label-theme'>Nome: </label>
             <input type="text" name="name" id="name" class='input-theme' placeholder='Digite seu nome' >

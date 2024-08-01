@@ -22,7 +22,7 @@ if (empty($userData->getImage())){
             </a>
             <p>Altere seus dados no formulário abaixo: </p>
         
-            <form action="<?=$base_url?>edit-profile_process.php" method="post" enctype="multipart/form-data">
+            <form action="edit-profile_process.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="type" value="update">
                 <label for="name" class='label-theme'>Nome: </label>
 
@@ -37,7 +37,7 @@ if (empty($userData->getImage())){
         </div>
         
         <div class="user-image-info">
-            <div id="userImage-edit-profile" style="background-image: url('<?=$base_url?>img/users/<?=$userData->getImage()?>')">
+            <div id="userImage-edit-profile" style="background-image: url('img/users/<?=$userData->getImage()?>')">
             </div>
 
             <label for="image" class='label-theme'>Selecione sua foto abaixo: </label>
@@ -57,7 +57,7 @@ if (empty($userData->getImage())){
             <h2>Altere a senha: </h2>
             <p>Digite a nova senha e confirme</p>
     
-            <form action="<?=$base_url?>edit-profile_process.php" method="post">
+            <form action="edit-profile_process.php" method="post">
                 <input type="hidden" name="type" value='changePassword'>
 
                 <label for="password" class='label-theme'>Senha: </label>
