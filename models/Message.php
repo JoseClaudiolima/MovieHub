@@ -13,8 +13,6 @@ class Message{
     public function setMessage($msg, $type, $redirect = 'index.php'){
         $_SESSION['msg'] = $msg;
         $_SESSION['type'] = $type;
-
-        print_r($_SESSION); echo '<br> <br>';
         
         if ($redirect === 'back'){
             header("Location: " . $_SERVER['HTTP_REFERER']);
