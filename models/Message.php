@@ -17,7 +17,7 @@ class Message{
         if ($redirect === 'back'){
             header("Location: " . $_SERVER['HTTP_REFERER']);
         } else{
-            header('Location: ' . $this->url . $redirect);
+            header('Location: ' . $redirect);
         }
     }
     
