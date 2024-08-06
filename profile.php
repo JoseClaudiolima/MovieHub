@@ -22,7 +22,7 @@ $userMovies = $movieDao->getMoviesByUserId($userId);
     <div class="user-profile-info">
         <h2><?=$userData->getFullName()?></h2>
         
-        <div id="profile-user-image" style="background-image: url('<?=$base_url?>img/users/<?=$userData->getImage()?>')"></div>
+        <div id="profile-user-image" style="background-image: url('img/users/<?=$userData->getImage()?>')"></div>
         
         <h3>Descrição: </h3>
         

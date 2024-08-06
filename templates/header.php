@@ -55,8 +55,8 @@ if ($userData){
     </form>
     <?php if($userAuth): ?>
         <nav id="h-links">
-            <a href="newMovie.php" class='desktop'>Adicionar Filme</a>
-            <a href="newMovie.php" class='mobile'><span class="material-symbols-outlined">add</span></a>
+            <a href="newmovie.php" class='desktop'>Adicionar Filme</a>
+            <a href="newmovie.php" class='mobile'><span class="material-symbols-outlined">add</span></a>
             <a href="dashboard.php" class='desktop'>Dashboard</a>
             <a href="dashboard.php" class='mobile'><span class="material-symbols-outlined">movie</span></a>
             
