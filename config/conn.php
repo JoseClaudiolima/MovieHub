@@ -2,8 +2,8 @@
 $host = 'viaduct.proxy.rlwy.net';
 $dbname = 'moviehub'; 
 $user = 'root';
-$pass = 'wBaVxNkAfatEKFfDyBPWFJLtHNbDEKek';
-$port = '34940';
+$pass = 'sYXGbbXxzlWlvpJDdPYZdiCLGfNVvmSw';
+$port = '40420';
 
 $conn = new PDO("mysql:host={$host};port={$port};dbname={$dbname}", $user, $pass);
 
